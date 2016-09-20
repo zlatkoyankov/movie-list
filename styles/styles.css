@@ -1,0 +1,23 @@
+h3.text-muted {
+  font-weight: bold;
+}
+
+#app div.show-grid.row {
+  margin: 50px auto;
+}
+
+.moviesList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.movieRow {
+  margin: 8px;
+}
+.movieRow span {
+  padding-left: 10px;
+}
+
+.movieRow:hover {
+  cursor: pointer;
+}
