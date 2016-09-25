@@ -1,4 +1,5 @@
 import * as types from './actionTypes';
+import mock_momives from '../mock/mock_movies';
 
 // export function loadMovies() {
 //   return {
@@ -11,36 +12,45 @@ import * as types from './actionTypes';
 //   };
 // }
 
+export function addToFavourite(movie) {
+  return {
+    type: types.ADD_MOVIES_TO_FAVOURITE,
+    movie: movie
+  };
+}
+
+export function removeFromFavourite(movie) {
+  return {
+    type: types.REMOVE_MOVIES_FROM_FAVOURITE,
+    movie: movie
+  };
+}
+
+export function updateFavouriteMovies(movies) {
+  return {
+    type: types.UPDATE_FAVOURITE_MOVIES,
+    movies: movies
+  };
+}
+
+export function addToAll(movie) {
+  return {
+    type: types.ADD_MOVIES_TO_ALL,
+    movie: movie
+  };
+}
+
+export function removeFromAll(movie) {
+  return {
+    type: types.REMOVE_MOVIES_FROM_ALL,
+    movie: movie
+  };
+}
+
 
 export function loadMovies() {
   return {
     type: types.LOAD_MOVIES_SUCCES,
-    allMovies: [
-      {
-        title: "movie 1",
-        description: "movie description 1",
-        year: 2000
-      },
-      {
-        title: "movie 2",
-        description: "movie description 2",
-        year: 2001
-      },
-      {
-        title: "movie 3",
-        description: "movie description 3",
-        year: 2002
-      },
-      {
-        title: "movie 4",
-        description: "movie description 4",
-        year: 2003
-      },
-      {
-        title: "movie 5",
-        description: "movie description 5",
-        year: 2004
-      }
-    ]
+    allMovies: mock_momives
   };
 }

@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
-import { Button, Glyphicon } from 'react-bootstrap';
+import { Glyphicon } from 'react-bootstrap';
 
-const Star = ({notEmpty}) => {
+const Star = ( {notEmpty} ) => {
   let glyphSign = 'star-empty';
   if( notEmpty ) {
     glyphSign = 'star';
@@ -10,7 +10,9 @@ const Star = ({notEmpty}) => {
 };
 
 Star.propTypes = {
-  notEmpty: PropTypes.bool.isRequired
+  notEmpty: PropTypes.bool
 };
+
+Star.defaultProps = { notEmpty: true };
 
 export default Star;

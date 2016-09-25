@@ -1,19 +1,34 @@
 import React, { PropTypes } from 'react';
-import { Button, ListGroupItem } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
-const MovieRow = ({onClick, btnClick, favourite, text}) => {
-  const btnText = favourite ? "Remove from favourite" : "Add to favourite";
-  return  (<ListGroupItem className="movieRow" bsStyle="info">
-            <Button onClick={btnClick}>{btnText}</Button>
-            <span onClick={onClick}>{text}</span>
-          </ListGroupItem>);
+import Star from './star';
+
+const MovieRow = ({movie, onClick, btnClick, text}) => {
+
+  const btnClickHandler = (e) => {
+    e.stopPropagation();
+    btnClick(movie);
+  };
+
+  const listItemClickHandler = (e) => {
+    e.stopPropagation();
+    onClick(movie);
+  };
+
+  return  (<li className="movieRow"
+               onClick={listItemClickHandler}>
+            <Button onClick={btnClickHandler}>Add to <Star /></Button>
+            <span>{text}</span>
+          </li>);
 };
 
 MovieRow.propTypes ={
+  movie: PropTypes.object.isRequired,
   onClick: PropTypes.func.isRequired,
   btnClick: PropTypes.func.isRequired,
-  favourite: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired
 };
+
+MovieRow.defaultProps = { favourite: true };
 
 export default MovieRow;

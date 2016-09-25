@@ -6,10 +6,19 @@ import configStore from './store/configStore';
 import Application from './components/application';
 import initialState from './store/initialState';
 import { loadMovies } from './actions/actions';
+import { saveToStore, restoreFromStore } from './utils/localStoreAPI';
 
-const store = configStore(initialState);
-store.dispatch(loadMovies());
+let localState = restoreFromStore();
 
+const store = configStore(localState);
+if (localState === initialState) {
+  store.dispatch(loadMovies());
+}
+
+store.subscribe(() => {
+  const state = store.getState();
+  saveToStore(state);
+});
 
 ReactDOM.render(
     <Provider store={store}>
