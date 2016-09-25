@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from 'react-dnd';
-import { Button } from 'react-bootstrap';
+import { Button, Glyphicon } from 'react-bootstrap';
 import Star from '../presentational/star';
 
 const movieSource = {
@@ -77,6 +77,7 @@ class DraggableMovieRow extends Component {
 
     return connectDragSource(connectDropTarget(
       <li className="movieRow" style={{ opacity }} onClick={listItemClickHandler}>
+        <Glyphicon glyph="th" />
         <Button onClick={btnClickHandler}>Remove from<Star /></Button>
         <span>{movie.title} ({movie.release_date.substr(0,4)})</span>
       </li>
