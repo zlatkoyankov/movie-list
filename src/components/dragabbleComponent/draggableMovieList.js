@@ -46,15 +46,13 @@ class DraggableMoviesList extends Component {
       <Panel header={title} bsStyle="primary">
         <ul>
           {movies.map((movie, i) => {
-            return (
-              <DraggableMovieRow key={movie.id}
-                    index={i}
-                    id={movie.id}
-                    movie={movie}
-                    onClick={this.props.onMovieClick}
-                    btnClick={this.props.btnClick}
-                    moveRow={this.moveRow} />
-            );
+            return (<DraggableMovieRow  key={movie.id}
+                                  index={i}
+                                  id={movie.id}
+                                  movie={movie}
+                                  onClick={this.props.onMovieClick}
+                                  btnClick={this.props.btnClick}
+                                  moveRow={this.moveRow} />);
           })}
         </ul>
       </Panel>

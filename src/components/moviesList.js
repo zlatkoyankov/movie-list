@@ -11,7 +11,7 @@ class MoviesList extends Component {
     return (
       <Panel header={title} bsStyle="info">
         <ul className="moviesList">
-          {this.props.movies.map( (movie) => {
+          {this.props.movies.map( movie => {
             return (<MovieRow key={movie.id}
                               movie={movie}
                               onClick={this.props.onMovieClick}

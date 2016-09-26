@@ -1,17 +1,6 @@
 import * as types from './actionTypes';
 import mock_momives from '../mock/mock_movies';
 
-// export function loadMovies() {
-//   return {
-//     types: [types.LOAD_MOVIES, types.LOAD_MOVIES_SUCCES, types.LOAD_MOVIES_ERROR],
-//     payload: {
-//       request: {
-//         url: '/movies'
-//       }
-//     }
-//   };
-// }
-
 export function addToFavourite(movie) {
   return {
     type: types.ADD_MOVIES_TO_FAVOURITE,
@@ -47,10 +36,9 @@ export function removeFromAll(movie) {
   };
 }
 
-
 export function loadMovies() {
   return {
-    type: types.LOAD_MOVIES_SUCCES,
+    type: types.LOAD_MOVIES_SUCCESS,
     allMovies: mock_momives
   };
 }

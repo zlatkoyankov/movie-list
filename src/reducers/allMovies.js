@@ -1,11 +1,15 @@
+import { sortBy } from 'lodash';
+
 import * as types from '../actions/actionTypes';
 import initialState from '../store/initialState';
-import { sortBy } from 'lodash';
 
 export function allMovies(state = initialState.allMovies, action) {
   switch(action.type) {
-    case types.LOAD_MOVIES_SUCCES:
-      return (Object.assign([], state, action.allMovies ));
+    case types.LOAD_MOVIES_SUCCESS:
+      return [
+        ...state,
+        ...action.allMovies
+      ];
 
     case types.ADD_MOVIES_TO_ALL:
       return sortBy([
@@ -25,5 +29,4 @@ export function allMovies(state = initialState.allMovies, action) {
     default:
       return state;
   }
-
 }

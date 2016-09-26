@@ -15,8 +15,7 @@ const MovieRow = ({movie, onClick, btnClick, text}) => {
     onClick(movie);
   };
 
-  return  (<li className="movieRow"
-               onClick={listItemClickHandler}>
+  return  (<li className="movieRow" onClick={listItemClickHandler}>
             <Button onClick={btnClickHandler}>Add to <Star /></Button>
             <span>{text}</span>
           </li>);
