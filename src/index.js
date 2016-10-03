@@ -15,6 +15,7 @@ if (localState === initialState) {
   store.dispatch(loadMovies());
 }
 
+
 store.subscribe(() => {
   const state = store.getState();
   saveToStore(state);
