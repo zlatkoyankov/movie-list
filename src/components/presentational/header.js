@@ -10,4 +10,8 @@ Header.propTypes = {
   projectTitle: PropTypes.string.isRequired
 };
 
+Header.defaultProps = {
+  projectTitle: ""
+};
+
 export default Header;

@@ -6,6 +6,10 @@ h3.text-muted {
   margin: 50px auto;
 }
 
+.fontBold {
+  font-weight: bold;
+}
+
 .moviesList {
   list-style-type: none;
   padding: 0;

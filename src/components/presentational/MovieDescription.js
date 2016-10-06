@@ -9,23 +9,23 @@ class MovieDescription extends Component {
         <Table bordered responsive>
           <tbody>
           <tr>
-            <td style={styleText}>Title</td>
+            <td className="fontBold">Title</td>
             <td>{movie.title}</td>
           </tr>
           <tr>
-            <td style={styleText}>Release date</td>
+            <td className="fontBold">Release date</td>
             <td>{movie.release_date}</td>
           </tr>
           <tr>
-            <td style={styleText}>Genres</td>
+            <td className="fontBold">Genres</td>
             <td>{movie.genres}</td>
           </tr>
           <tr>
-            <td style={styleText}>Original language</td>
+            <td className="fontBold">Original language</td>
             <td>{movie.original_language}</td>
           </tr>
           <tr>
-            <td style={styleText}>Overview</td>
+            <td className="fontBold">Overview</td>
             <td>{movie.overview}</td>
           </tr>
           </tbody>
@@ -34,10 +34,6 @@ class MovieDescription extends Component {
     );
   }
 }
-
-const styleText = {
-  fontWeight: 'bold'
-};
 
 MovieDescription.propTypes = {
   movie: PropTypes.object.isRequired

@@ -9,6 +9,9 @@ const Footer = (props) => {
 Footer.propTypes = {
   text: PropTypes.string.isRequired
 };
+Footer.defaultProps = {
+  text: ''
+};
 
 export default Footer;
 
